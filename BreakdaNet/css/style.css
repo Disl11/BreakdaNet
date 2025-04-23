@@ -1,0 +1,224 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Frijole&family=Rubik+Maps&family=Sedgwick+Ave+Display&family=Space+Mono:ital,wght@0,400;1,700&display=swap');
+
+
+ 
+body{
+    margin: 0 auto; 
+}
+
+
+/* Top-page */
+header{
+    display: flex;
+    align-items: center;
+    background-color: black;
+}
+
+header img {
+    width: 50px;
+    height: 50px;
+}
+
+
+section.top-page{
+    background: url("../images/bannier.jpeg");
+    height: 30vh;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+nav{
+    display: flex;
+    list-style: none;
+    color: white;
+    margin-left: 30px;
+    justify-content: space-between;
+
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+
+
+.landing-page h1{
+    font-size: 3em;
+    margin-top: 40px;
+    color: white;
+    text-align: center;
+    font-family: "Frijole", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.landing-page h2{
+    font-size: 1.5rem;
+    margin-top: 0px;
+    color: white;
+    text-align: center;
+    font-family: "Frijole", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* details born */
+.culture{
+    margin: 50px;
+}
+
+
+.naissance{
+    font-family: "Frijole", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.7rem;
+    position: relative;
+}
+
+.naissance::before{
+    content:"";
+    position: absolute;
+    background-color: red;
+    width:50px;
+    height: 7px;
+    bottom: 0;
+    
+}
+
+.details-naissance{
+    min-height: 350px;
+    display: flex;
+}
+
+.img-naissance{
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/hiphopbronx.jpg);
+    min-width: 350px;
+    height: 350px;
+    border-radius: 10px;
+}
+
+.p-naissance{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    
+  font-family:'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+}
+
+
+/* 5-pilliers */
+
+.cinq-pilliers{
+    margin: 50px
+}
+
+.cinq-pilliers-name{
+    font-family: "Frijole", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+    position: relative;
+}
+.cinq-pilliers-name::before{
+    content:"";
+    position: absolute;
+    background-color: red;
+    width:50px;
+    height: 7px;
+    bottom: 0;
+}
+
+
+.pilliers-box{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.img{
+    background-size: cover;
+    background-position: center;
+    min-width: 250px;
+    height: 300px;
+    flex: 1 0 250px;
+    position: relative; 
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease, filter 0.3 ease;
+}
+
+.img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.Le-rap{
+    background-image: url(../images/nekfeu.webp);
+}
+
+.Le-DJing{
+    background-image: url(../images/Dj-Vientiane.jpg) ;
+}
+
+.Le-breakdance{
+    background-image: url(../images/bboydani.jpg) ;
+}
+
+.Le-grafiti{
+    background-image: url(../images/grafeur2.jpg) ;
+}
+
+.Le-beatbox{
+    background-image: url(../images/beatbox.jpg) ;
+}
+
+.details-rap,
+.details-Djing,
+.details-Breakdance,
+.details-grafiti,
+.details-Beatbox {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 8px 0;
+}
+
+.name-rap,
+.name-Djing,
+.name-Breakdance,
+.name-grafiti,
+.name-Beatbox {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.img:hover .details-rap,
+.img:hover .details-Djing,
+.img:hover .details-Breakdance,
+.img:hover .details-grafiti,
+.img:hover .details-Beatbox {
+    background-color: rgba(221, 26, 26, 0.95);
+}
+
+
