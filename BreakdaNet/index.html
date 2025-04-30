@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BreakdaNet - La culture du Breakdance</title>
+    <link rel="icon" type="images/jpeg" href="images/logo.jpg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.burger');
+            const navbar = document.querySelector('.navbar');
+            let menuOpen = false;
+    
+            burger.addEventListener('click', () => {
+                if (!menuOpen) {
+                    navbar.style.right = '0';
+                    menuOpen = true;
+                } else {
+                    navbar.style.right = '-100%';
+                    menuOpen = false;
+                }
+            });
+        });
+    </script>
+    <section class="top-page">
+        <header>
+            <a href="index.html">
+                <img src="images/logo.jpg" alt="Banner">
+            </a>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#top">Accueil</a></li>
+                    <li><a href="#">Battles</a></li>
+                    <li><a href="#cinq-piliers">Les 5 piliers</a></li>
+                    <li><a href="#">Jeu Breakdance</a></li>
+                    <li><a href="#">Communauté</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>    
+            </nav>
+        </header>
+        <div class="landing-page">
+            <h1>BreakdaNet</h1>
+            <h2>From the street to pixel Freeze</h2>
+        </div>  
+    </section>
+
+    <section class="culture">
+        <h2 class="naissance">La naissance de la culture Hip-Hop</h2>
+            <div class="details-naissance">
+                <a class="img-naissance"></a>
+                <p class="p-naissance">La culture hip-hop est née dans les années 1970 dans le Bronx, à New York, au sein des communautés afro-américaines et latino-américaines. Elle est issue d’un contexte social difficile : pauvreté, violences urbaines, ségrégation raciale, et abandon des services publics dans certains quartiers. Mais c’est aussi un formidable exemple de résilience et de créativité.</p>
+            </div>
+    </section> 
+
+    <section id="cinq-piliers" class="cinq-piliers">
+        <h2 class="cinq-piliers-name">
+            Les 5 piliers
+        </h2>
+        <div class="piliers-box">   
+            <a class="img Le-rap">
+                <div class="details-rap">
+                  <p class="name-rap">Rap</p>
+                </div>
+            </a>
+            <a class="img Le-DJing">
+                <div class="details-Djing">
+                    <p class="name-Djing">DJing</p>
+                </div>
+            </a>  
+            <a class="img Le-breakdance">
+                <div class="details-Breakdance">
+                    <p class="name-Breakdance">Breakdance</p>
+                </div>
+            </a>  
+            <a class="img Le-grafiti">
+                <div class="details-grafiti">
+                    <p class="name-grafiti">Graffiti</p>
+                </div>
+            </a>  
+            <a class="img Le-beatbox">
+                <div class="details-Beatbox">
+                    <p class="name-Beatbox">Beatbox</p>
+                </div>
+            </a>     
+        </div>
+    </section>
+
+    <footer>
+      <p>Les réseaux</p> 
+    </footer>
+</body>
+</html>
