@@ -1,0 +1,423 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Frijole&family=Rubik+Maps&family=Sedgwick+Ave+Display&family=Space+Mono:ital,wght@0,400;1,700&display=swap');
+
+
+ 
+body{
+    margin: 0 auto; 
+}
+
+
+/* --------- Top-page ----------- */
+header{
+    display: flex;
+    align-items: center;
+    background-color: black;
+    position: fixed; 
+    top: 0;
+    left:0;
+    width: 100%;
+    z-index: 1000;
+  
+}
+
+header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 200px;
+}
+
+
+section.top-page{
+    background: url("../images/bannier.jpeg");
+    height: 30vh;
+    background-size: cover;
+}
+
+nav{
+    display: flex;
+    list-style: none;
+    color: white;
+    margin-left: 30px;
+    justify-content: space-between;
+}
+
+nav > ul {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+nav li a{
+    margin-right: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    padding: 5px 8px;
+    transition: color 0.3s ease border-color 0.3s ease;;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: red;
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: red;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.submenu {
+    list-style: none;
+    position:absolute;
+    top: 30px;
+    left: 0;
+    background-color: black;
+    width: max-content;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.submenu li a{
+    display: block;
+    padding: 10px 5px;
+    text-decoration: none;
+}
+
+.has-sous-nav{
+    position: relative;
+}
+
+.has-sous-nav:hover .submenu{
+    display: block;
+    max-height: 500px;
+    opacity: 1;
+}
+
+.landing-page {
+    display: flex;
+    flex-direction: column;  
+    justify-content: center; 
+    align-items: center;    
+    height: 100%;            
+    text-align: center;      
+    color: white;
+    padding-top: 10px;  
+}
+
+
+.landing-page h1{
+    font-size: 3em;
+    color: white;
+    text-align: center;
+    font-family: "Frijole", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 5px;
+}
+
+
+.landing-page h2{
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+    font-family: "Frijole", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+
+
+
+/* -----------details born----------- */
+.culture{
+    margin: 50px;
+}
+
+
+.naissance{
+    font-family: "Frijole", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.7rem;
+    position: relative;
+}
+
+.naissance::before{
+    content:"";
+    position: absolute;
+    background-color: red;
+    width:50px;
+    height: 7px;
+    bottom: 0;
+    
+}
+
+.details-naissance{
+    min-height: 350px;
+    display: flex;
+}
+
+.img-naissance{
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/hiphopbronx.jpg);
+    min-width: 350px;
+    height: 350px;
+    border-radius: 10px;
+}
+
+.p-naissance{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    
+  font-family:'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+}
+
+
+
+
+
+/* ---------- 5-pilliers ----------- */
+
+.cinq-piliers{
+    margin: 50px
+}
+
+.cinq-piliers-name{
+    font-family: "Frijole", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+    position: relative;
+}
+.cinq-piliers-name::before{
+    content:"";
+    position: absolute;
+    background-color: red;
+    width:50px;
+    height: 7px;
+    bottom: 0;
+}
+
+
+.piliers-box{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.img{
+    background-size: cover;
+    background-position: center;
+    min-width: 250px;
+    height: 300px;
+    flex: 1 0 250px;
+    position: relative; 
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+
+
+.Le-rap{
+    background-image: url(../images/nekfeu.webp);
+}
+
+.Le-DJing{
+    background-image: url(../images/Dj-Vientiane.jpg) ;
+}
+
+.Le-breakdance{
+    background-image: url(../images/bboydani.jpg) ;
+}
+
+.Le-grafiti{
+    background-image: url(../images/grafeur2.jpg) ;
+}
+
+.Le-beatbox{
+    background-image: url(../images/beatbox.jpg) ;
+}
+
+.details-rap,
+.details-Djing,
+.details-Breakdance,
+.details-grafiti,
+.details-Beatbox {
+    position: absolute;
+    bottom: 10px;
+    right: 0px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 6px 12px ;
+    border-radius: 5px;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+   
+}
+
+.name-rap,
+.name-Djing,
+.name-Breakdance,
+.name-grafiti,
+.name-Beatbox {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000;
+    
+}
+
+.img:hover .details-rap,
+.img:hover .details-Djing,
+.img:hover .details-Breakdance,
+.img:hover .details-grafiti,
+.img:hover .details-Beatbox {
+    transform: translateX(-160px);
+    opacity: 1;
+}
+
+
+
+/* ---------- Menu Burger ---------- */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.burger span {
+    display: block;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+}
+
+
+
+
+/* ---------- Media Queries ---------- */
+@media all and (max-width: 768px) {
+    
+    .burger {
+        display: flex;
+    }
+
+    nav.navbar {
+        position: fixed;
+        top: 50px;
+        right: -100%; 
+        width: 30%;
+        background-color: black;
+        transition: right 0.3s ease-in-out;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        opacity: 85%;
+    }
+
+    nav.navbar.active {
+        display: flex;
+    }
+
+    nav.navbar ul {
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+    }
+
+    nav.navbar li {
+        margin: 10px 0;
+    }
+
+    .submenu {
+        position: absolute;
+        top: 10px;
+        right: -10%;
+        background-color: black;
+        width: 250px;
+        list-style: none;
+        transition: right 0.3s ease;
+        padding: 0px ;
+        opacity: 0;
+        z-index: 999;
+    }
+    
+    .submenu li a {
+        padding: 10px 10px;
+        color: white;
+        text-decoration: none;
+    }
+    
+    .has-sous-nav {
+        position: relative;
+    }
+    
+    
+
+}
+
+
+@media screen and (max-width: 768px) {
+    .landing-page h1 {
+        font-size: 2em;
+    }
+
+    .landing-page h2 {
+        font-size: 1.2em;
+    }
+
+    .pilliers-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img {
+        width: 90%;
+    }
+
+    .details-naissance {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img-naissance {
+        width: 100%;
+        height: 250px;
+    }
+
+    .p-naissance {
+        font-size: 1.2rem;
+        margin: 15px;
+    }
+}
+
+
