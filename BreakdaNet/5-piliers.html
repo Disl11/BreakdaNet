@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BreakdaNet - La culture du Breakdance</title>
+    <link rel="icon" type="images/jpeg" href="images/logo-4.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.burger');
+            const navbar = document.querySelector('.navbar');
+            let menuOpen = false;
+    
+            burger.addEventListener('click', () => {
+                if (!menuOpen) {
+                    navbar.style.right = '0';
+                    menuOpen = true;
+                } else {
+                    navbar.style.right = '-100%';
+                    menuOpen = false;
+                }
+            });
+            const hasSousNav = document.querySelector('.has-sous-nav > a');
+            const submenu = document.querySelector('.has-sous-nav .submenu');
+
+                hasSousNav.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                submenu.classList.toggle('active');
+            });
+        });
+    </script>
+    <section>
+        <header>
+            <a href="index.html">
+                <img src="images/logo-4.png" alt="Banner">
+            </a>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="#">Battles</a></li>
+                    <li class="has-sous-nav">
+                        <a href="#cinq-piliers" id="open-piliers">Les 5 piliers</a>
+                        <ul class="submenu" id="submenu">
+                            <li><a href="5-piliers.html">Rap</a></li>
+                            <li><a href="5-piliers.html">Djing</a></li>
+                            <li><a href="5-piliers.html">Breakdance</a></li>
+                            <li><a href="5-piliers.html">Graffiti</a></li>
+                            <li><a href="5-piliers.html">Beatbox</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Jeu Break</a></li>
+                    <li><a href="#">Communauté</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>    
+            </nav>
+        </header>
+    </section>
