@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BreakdaNet - Les 5 piliers du hip-hop</title>
+    <link rel="icon" type="images/jpeg" href="images/logo-4.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="5-piliers.css">
+</head>
+
+<body>
+     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.burger');
+            const navbar = document.querySelector('.navbar');
+            let menuOpen = false;
+    
+            burger.addEventListener('click', () => {
+                if (!menuOpen) {
+                    navbar.style.right = '0';
+                    menuOpen = true;
+                } else {
+                    navbar.style.right = '-100%';
+                    menuOpen = false;
+                }
+            });
+            const hasSousNav = document.querySelector('.has-sous-nav > a');
+            const submenu = document.querySelector('.has-sous-nav .submenu');
+
+                hasSousNav.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                submenu.classList.toggle('active');
+            });
+        });
+    </script>
+    <section>
+        <header>
+            <a href="index.html">
+                <img src="images/logo-4.png" alt="Banner">
+            </a>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="#">Battles</a></li>
+                    <li class="has-sous-nav">
+                        <a href="#cinq-piliers" id="open-piliers">Les 5 piliers</a>
+                        <ul class="submenu" id="submenu">
+                            <li><a href="5-piliers.html">Rap</a></li>
+                            <li><a href="5-piliers.html">Djing</a></li>
+                            <li><a href="5-piliers.html">Breakdance</a></li>
+                            <li><a href="5-piliers.html">Graffiti</a></li>
+                            <li><a href="5-piliers.html">Beatbox</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Jeu Break</a></li>
+                    <li><a href="#">Communauté</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>    
+            </nav>
+        </header>
+    </section> 
+     <section> 
+        <div class="video-top">
+            <video autoplay loop muted plays-inline class="back-video">
+                <source src="video/break-mp4.mp4">
+            </video>
+            <div class="title-pilier">
+                <h1>Les 5 piliers du Hip-hop</h1>  
+            <ul class="box-5piliers">
+                <li><a href="">Rap</a></li>
+                <li><a href="">Djing</a></li>
+                <li><a href="">Breakdance</a></li>
+                <li><a href="">Graffiti</a></li>
+                <li><a href="">Beatbox</a></li>
+            </ul>
+            </div>
+        </div>          
+    </section>
+    <section class="histoire-pilier">
+        <div class="p-img">
+            <div class="image-border-outer">
+                <div class="image-border-middle">
+                  <div class="image-border-inner">
+                    <img src="../images/iamrap.jpg" alt="Image représentant le pilier du rap" class="responsive-img" />
+                  </div>
+                </div>
+              </div>
+            <div class="text-content">
+                <h2 class="title-h">L'histoire des 5 piliers</h2>
+                <div class="p-pilier">
+                    La culture Hip-Hop, née dans les années 1970 dans les quartiers du Bronx à New York, repose sur cinq piliers fondamentaux qui incarnent son énergie, sa créativité et son esprit de communauté : le rap, ou l’art de manier les mots et de transmettre des messages puissants à travers la rime ; le DJing, qui pose les bases sonores grâce au mix et au scratch ; le breakdance, une danse acrobatique et expressive née dans la rue ; le graffiti, forme d’art visuel qui s’empare de l’espace urbain pour affirmer une identité ; et le beatbox, percussion vocale qui remplace les instruments par la seule force de la bouche. À ces cinq disciplines s’ajoute un sixième pilier essentiel : la connaissance, qui symbolise la conscience de soi, la transmission des savoirs, le respect et les valeurs d’unité, de paix et de dépassement. Ensemble, ces piliers forment une culture riche, vivante et engagée, qui continue d’inspirer des générations à travers le monde.
+                </div>
+            </div>
+        </div>
+    </section> 
+    </body>             
