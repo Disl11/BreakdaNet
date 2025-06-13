@@ -5,21 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BreakdaNet - La culture du Breakdance</title>
-    <link rel="icon" type="images/jpeg" href="images/logo.jpg">
+    <link rel="icon" type="images/jpeg" href="images/logo-4.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.burger');
+            const navbar = document.querySelector('.navbar');
+            let menuOpen = false;
+    
+            burger.addEventListener('click', () => {
+                if (!menuOpen) {
+                    navbar.style.right = '0';
+                    menuOpen = true;
+                } else {
+                    navbar.style.right = '-100%';
+                    menuOpen = false;
+                }
+            });
+            const hasSousNav = document.querySelector('.has-sous-nav > a');
+            const submenu = document.querySelector('.has-sous-nav .submenu');
+
+                hasSousNav.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                submenu.classList.toggle('active');
+            });
+        });
+    </script>
     <section class="top-page">
         <header>
-            <img src="images/logo.jpg" alt="Banner">
-            <nav>
-                <li>Accueil</li>
-                <li>Battles</li>
-                <li>Les 5 pilliers</li>
-                <li>Jeu Breakdance</li>
-                <li>Communauté</li>
-                <li>Contact</li>
+            <a href="index.html">
+                <img src="images/logo-4.png" alt="Banner">
+            </a>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#top">Accueil</a></li>
+                    <li><a href="#">Battles</a></li>
+                    <li class="has-sous-nav">
+                        <a href="#cinq-piliers" id="open-piliers">Les 5 piliers</a>
+                        <ul class="submenu" id="submenu">
+                            <li><a href="5-piliers.html">Rap</a></li>
+                            <li><a href="5-piliers.html">Djing</a></li>
+                            <li><a href="5-piliers.html">Breakdance</a></li>
+                            <li><a href="5-piliers.html">Graffiti</a></li>
+                            <li><a href="5-piliers.html">Beatbox</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Jeu Break</a></li>
+                    <li><a href="#">Communauté</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>    
             </nav>
         </header>
         <div class="landing-page">
@@ -31,37 +73,37 @@
     <section class="culture">
         <h2 class="naissance">La naissance de la culture Hip-Hop</h2>
             <div class="details-naissance">
-                <a href="" class="img-naissance"></a>
+                <a class="img-naissance"></a>
                 <p class="p-naissance">La culture hip-hop est née dans les années 1970 dans le Bronx, à New York, au sein des communautés afro-américaines et latino-américaines. Elle est issue d’un contexte social difficile : pauvreté, violences urbaines, ségrégation raciale, et abandon des services publics dans certains quartiers. Mais c’est aussi un formidable exemple de résilience et de créativité.</p>
             </div>
     </section> 
 
-    <section class="cinq-pilliers">
-        <h2 class="cinq-pilliers-name">
-            Les 5 pilliers
+    <section id="cinq-piliers" class="cinq-piliers">
+        <h2 class="cinq-piliers-name">
+            Les 5 piliers
         </h2>
-        <div class="pilliers-box">   
-            <a class="img Le-rap">
+        <div class="piliers-box">   
+            <a href="5-piliers.html" class="img Le-rap">
                 <div class="details-rap">
                   <p class="name-rap">Rap</p>
                 </div>
             </a>
-            <a class="img Le-DJing">
+            <a href="5-piliers.html" class="img Le-DJing">
                 <div class="details-Djing">
                     <p class="name-Djing">DJing</p>
                 </div>
             </a>  
-            <a class="img Le-breakdance">
+            <a  href="5-piliers.html" class="img Le-breakdance">
                 <div class="details-Breakdance">
                     <p class="name-Breakdance">Breakdance</p>
                 </div>
             </a>  
-            <a class="img Le-grafiti">
+            <a href="5-piliers.html" class="img Le-grafiti">
                 <div class="details-grafiti">
                     <p class="name-grafiti">Graffiti</p>
                 </div>
             </a>  
-            <a class="img Le-beatbox">
+            <a href="5-piliers.html" class="img Le-beatbox">
                 <div class="details-Beatbox">
                     <p class="name-Beatbox">Beatbox</p>
                 </div>
@@ -72,7 +114,5 @@
     <footer>
       <p>Les réseaux</p> 
     </footer>
-
-
 </body>
 </html>
