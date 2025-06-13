@@ -8,16 +8,23 @@ body{
 }
 
 
-/* Top-page */
+/* --------- Top-page ----------- */
 header{
     display: flex;
     align-items: center;
     background-color: black;
+    position: fixed; 
+    top: 0;
+    left:0;
+    width: 100%;
+    z-index: 1000;
+  
 }
 
 header img {
     width: 50px;
     height: 50px;
+    border-radius: 200px;
 }
 
 
@@ -25,9 +32,6 @@ section.top-page{
     background: url("../images/bannier.jpeg");
     height: 30vh;
     background-size: cover;
-    justify-content: center;
-    align-items: center;
-    
 }
 
 nav{
@@ -36,43 +40,114 @@ nav{
     color: white;
     margin-left: 30px;
     justify-content: space-between;
-
 }
 
-nav ul {
+nav > ul {
     display: flex;
     list-style: none;
     padding-left: 0;
+    margin: 0;
 }
 
-nav li {
+nav li a{
     margin-right: 20px;
 }
 
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    padding: 5px 8px;
+    transition: color 0.3s ease border-color 0.3s ease;;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: red;
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: red;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.submenu {
+    list-style: none;
+    position:absolute;
+    top: 30px;
+    left: 0;
+    background-color: black;
+    width: max-content;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.submenu li a{
+    display: block;
+    padding: 10px 5px;
+    text-decoration: none;
+}
+
+.has-sous-nav{
+    position: relative;
+}
+
+.has-sous-nav:hover .submenu{
+    display: block;
+    max-height: 500px;
+    opacity: 1;
+}
+
+.landing-page {
+    display: flex;
+    flex-direction: column;  
+    justify-content: center; 
+    align-items: center;    
+    height: 100%;            
+    text-align: center;      
+    color: white;
+    padding-top: 10px;  
+}
 
 
 .landing-page h1{
     font-size: 3em;
-    margin-top: 40px;
     color: white;
     text-align: center;
     font-family: "Frijole", system-ui;
     font-weight: 400;
     font-style: normal;
+    margin-bottom: 5px;
 }
+
 
 .landing-page h2{
     font-size: 1.5rem;
-    margin-top: 0px;
+    margin-top: 20px;
     color: white;
     text-align: center;
     font-family: "Frijole", system-ui;
     font-weight: 400;
     font-style: normal;
+    
 }
 
 
-/* details born */
+
+
+/* -----------details born----------- */
 .culture{
     margin: 50px;
 }
@@ -115,26 +190,28 @@ nav li {
     justify-content: center;
     align-items: center;
     margin: 20px;
-    
-  font-family:'Times New Roman', Times, serif;
-  font-size: 1.5rem;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 1.5rem;
 }
 
 
-/* 5-pilliers */
 
-.cinq-pilliers{
+
+
+/* ---------- 5-pilliers ----------- */
+
+.cinq-piliers{
     margin: 50px
 }
 
-.cinq-pilliers-name{
+.cinq-piliers-name{
     font-family: "Frijole", system-ui;
     font-weight: 400;
     font-style: normal;
     font-size: 2rem;
     position: relative;
 }
-.cinq-pilliers-name::before{
+.cinq-piliers-name::before{
     content:"";
     position: absolute;
     background-color: red;
@@ -144,7 +221,7 @@ nav li {
 }
 
 
-.pilliers-box{
+.piliers-box{
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -161,13 +238,9 @@ nav li {
     position: relative; 
     overflow: hidden;
     border-radius: 10px;
-    transition: transform 0.3s ease, filter 0.3 ease;
 }
 
-.img:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1);
-}
+
 
 .Le-rap{
     background-image: url(../images/nekfeu.webp);
@@ -195,11 +268,13 @@ nav li {
 .details-grafiti,
 .details-Beatbox {
     position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    padding: 8px 0;
+    bottom: 10px;
+    right: 0px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 6px 12px ;
+    border-radius: 5px;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+   
 }
 
 .name-rap,
@@ -211,6 +286,7 @@ nav li {
     font-size: 1.1rem;
     font-weight: bold;
     color: #000;
+    
 }
 
 .img:hover .details-rap,
@@ -218,7 +294,297 @@ nav li {
 .img:hover .details-Breakdance,
 .img:hover .details-grafiti,
 .img:hover .details-Beatbox {
-    background-color: rgba(221, 26, 26, 0.95);
+    transform: translateX(-160px);
+    opacity: 1;
+}
+
+
+
+/* ---------- Menu Burger ---------- */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.burger span {
+    display: block;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+}
+
+
+
+/* ----------------------  Page 5 piliers --------*/
+
+.video-top{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(12,3,51,0.3),rgba(12,3,51,0.3));
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+
+
+.title-pilier{
+    font-size: 3em;
+    color: white;
+    text-align: center;
+    font-family: "Frijole", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.back-video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* ----------  Page 5 piliers histoire --------*/
+.histoire-pilier{
+  margin: 50px;
+}
+
+.title-h{
+    font-family: "Frijole", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+    position: relative;
+}
+.p-img {
+    display: flex;
+    align-items: flex-start; 
+    gap: 20px; 
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.pilier-box {
+    background-image: url(../images/iamrap.jpg);
+    background-size: cover;
+    background-position: center;
+    min-width: 500px;
+    height: 400px;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+.title-h {
+    font-family: "Frijole", system-ui;
+    font-weight: 400;
+    font-size: 2rem;
+    margin: 0 0 15px 0;
+}
+
+
+.box-5piliers {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+
+  }
+  
+  .box-5piliers li {
+    list-style: none;
+  }
+  
+  .box-5piliers a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: 'Frijole', system-ui;
+    padding: 10px 20px;
+    border-radius: 10px ;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,8);
+    
+  }
+  
+  .box-5piliers a:hover {
+    color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    transform: translateY(-2px);
+  }
+
+
+.title-h::before{
+
+    content:"";
+    position: absolute;
+    background-color: red;
+    width:50px;
+    height: 7px;
+    bottom: 0;
+}
+
+
+.p-pilier {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    text-align: justify;
+}
+.image-border-outer {
+    background-color: black; 
+    padding: 8px;             
+    display: inline-block;
+  }
+  
+  .image-border-middle {
+   
+    background-color: white;  
+    padding: 6px;             
+  }
+  
+  .responsive-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+  }
+
+
+
+
+
+
+/* ---------- Media Queries ---------- */
+@media all and (max-width: 768px) {
+    
+    .burger {
+        display: flex;
+    }
+
+    nav.navbar {
+        position: fixed;
+        top: 50px;
+        right: -100%; 
+        width: 30%;
+        background-color: black;
+        transition: right 0.3s ease-in-out;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        opacity: 85%;
+    }
+
+    nav.navbar.active {
+        display: flex;
+    }
+
+    nav.navbar ul {
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+    }
+
+    nav.navbar li {
+        margin: 10px 0;
+    }
+
+    .submenu {
+        position: absolute;
+        top: 10px;
+        right: -10%;
+        background-color: black;
+        width: 250px;
+        list-style: none;
+        transition: right 0.3s ease;
+        padding: 0px ;
+        opacity: 0;
+        z-index: 999;
+    }
+    
+    .submenu li a {
+        padding: 10px 10px;
+        color: white;
+        text-decoration: none;
+    }
+    
+    .has-sous-nav {
+        position: relative;
+    }
+    
+    
+
+}
+
+
+@media screen and (max-width: 768px) {
+    .landing-page h1 {
+        font-size: 2em;
+    }
+
+    .landing-page h2 {
+        font-size: 1.2em;
+    }
+
+    .pilliers-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img {
+        width: 90%;
+    }
+
+    .details-naissance {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img-naissance {
+        width: 100%;
+        height: 250px;
+    }
+
+    .p-naissance {
+        font-size: 1.2rem;
+        margin: 15px;
+    }
+
+    .p-img {
+        flex-direction: column;
+        align-items: center;
+        min-height: auto;
+    }
+
+    .pilier-box {
+        width: 100%;
+        min-width: auto;
+        height: 250px;
+    }
+
+    .p-pilier {
+        font-size: 1.2rem;
+        margin: 15px;
+        text-align: center;
+        padding: 0 10px;
+    }
+
 }
 
 
